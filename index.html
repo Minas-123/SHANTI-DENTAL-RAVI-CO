@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHANTI DENTAL RAVI & CO | Dental Wholesellers & Retailers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: #0d7b8f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .company-name h1 {
+            font-size: 1.5rem;
+            color: #0d7b8f;
+        }
+        
+        .company-name p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #0d7b8f;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #0d7b8f;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(13, 123, 143, 0.9), rgba(13, 123, 143, 0.8)), url('https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #f8b500;
+            color: #333;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #ffcc33;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #0d7b8f;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background-color: #f8b500;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .about-section, .products-section, .contact-section {
+            margin-bottom: 80px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background-color: #e6f4f7;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #0d7b8f;
+        }
+        
+        /* Products */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-image {
+            height: 180px;
+            background-color: #e6f4f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d7b8f;
+            font-size: 3rem;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            color: #0d7b8f;
+            margin-bottom: 10px;
+        }
+        
+        /* Contact */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-details {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e6f4f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d7b8f;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: #0d7b8f;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #0a6373;
+        }
+        
+        /* Page Content */
+        .page-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+        
+        .page-content h2 {
+            color: #0d7b8f;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f8b500;
+        }
+        
+        .page-content h3 {
+            color: #0d7b8f;
+            margin: 25px 0 15px;
+        }
+        
+        .page-content p {
+            margin-bottom: 15px;
+        }
+        
+        .page-content ul, .page-content ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0d7b8f;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: #f8b500;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #f8b500;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.3rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+            }
+            
+            .mobile-nav.active {
+                display: block;
+            }
+            
+            .mobile-nav ul {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .mobile-nav ul li {
+                margin: 10px 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .page-content {
+                padding: 25px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">SDR</div>
+                <div class="company-name">
+                    <h1>SHANTI DENTAL RAVI & CO</h1>
+                    <p>Dental Wholesellers & Retailers</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#privacy">Privacy Policy</a></li>
+                <li><a href="#terms">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Quality Dental Supplies for Professionals</h2>
+            <p>Trusted by dental professionals across Hyderabad for high-quality dental instruments, equipment, and consumables. Your one-stop solution for all dental supply needs.</p>
+            <a href="#contact" class="cta-button">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Home Page Content -->
+        <section id="home-content">
+            <!-- About Section -->
+            <section class="about-section" id="about">
+                <h2 class="section-title">About Our Company</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Trusted Dental Supplier Since 1995</h3>
+                        <p>SHANTI DENTAL RAVI & CO has been serving dental professionals across Hyderabad and Telangana for over two decades. We specialize in providing high-quality dental instruments, equipment, and consumables to both wholesale and retail customers.</p>
+                        <p>Our commitment to quality, reliability, and customer service has made us a preferred partner for dental clinics, hospitals, and practitioners throughout the region.</p>
+                        <p>With our extensive inventory and deep industry knowledge, we ensure that dental professionals have access to the tools they need to provide exceptional patient care.</p>
+                    </div>
+                    <div class="about-image">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Products Section -->
+            <section class="products-section" id="products">
+                <h2 class="section-title">Our Products</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-teeth"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Dental Instruments</h3>
+                            <p>High-quality dental instruments including forceps, elevators, scalers, and surgical tools from trusted manufacturers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-syringe"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Consumables</h3>
+                            <p>Disposables, anesthetics, impression materials, cements, and other essential dental consumables.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-teeth-open"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Prosthetics</h3>
+                            <p>Crowns, bridges, dentures, implants, and all related prosthetic components and materials.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Equipment</h3>
+                            <p>Dental chairs, X-ray machines, autoclaves, compressors, and other dental equipment.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Contact Section -->
+            <section class="contact-section" id="contact">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <h3>Get in Touch</h3>
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>Ground Floor, Shop No. G-26, 5-9-1121, Agarwal Chambers, Abids, Sher Gate, King Koti, Hyderabad, Telangana 500001</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Phone Numbers</h4>
+                                    <p>9246377427</p>
+                                    <p>8121102406</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>shantidentalravi@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4>Business Hours</h4>
+                                    <p>Monday - Saturday: 9:30 AM - 8:30 PM</p>
+                                    <p>Sunday: 10:00 AM - 2:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <div class="contact-details">
+                            <h3>Send Us a Message</h3>
+                            <form id="contactForm">
+                                <div class="form-group">
+                                    <label for="name">Full Name *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Your Message *</label>
+                                    <textarea id="message" name="message" required></textarea>
+                                </div>
+                                
+                                <button type="submit" class="submit-btn">Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <!-- Privacy Policy Page -->
+        <section class="page-content" id="privacy" style="display: none;">
+            <h2>Privacy Policy</h2>
+            <p>SHANTI DENTAL RAVI & CO is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or interact with our business.</p>
+            
+            <h3>Information We Collect</h3>
+            <p>We may collect personal information that you voluntarily provide to us when you:</p>
+            <ul>
+                <li>Contact us through our website, email, or phone</li>
+                <li>Place an order for our products</li>
+                <li>Subscribe to our newsletter or promotional materials</li>
+                <li>Participate in our surveys or promotions</li>
+            </ul>
+            
+            <h3>How We Use Your Information</h3>
+            <p>We may use the information we collect to:</p>
+            <ul>
+                <li>Process and fulfill your orders</li>
+                <li>Respond to your inquiries and provide customer support</li>
+                <li>Send you promotional materials and updates about our products</li>
+                <li>Improve our website and services</li>
+                <li>Comply with legal obligations</li>
+            </ul>
+            
+            <h3>Information Sharing</h3>
+            <p>We do not sell, trade, or otherwise transfer your personal information to outside parties except as described in this policy. We may share information with trusted third parties who assist us in operating our website, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.</p>
+            
+            <h3>Data Security</h3>
+            <p>We implement appropriate technical and organizational security measures to protect your personal information against accidental or unlawful destruction, loss, alteration, unauthorized disclosure, or access.</p>
+            
+            <h3>Changes to This Policy</h3>
+            <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+            
+            <p><strong>Last Updated:</strong> June 15, 2023</p>
+        </section>
+        
+        <!-- Terms & Conditions Page -->
+        <section class="page-content" id="terms" style="display: none;">
+            <h2>Terms and Conditions</h2>
+            <p>Welcome to SHANTI DENTAL RAVI & CO. These terms and conditions outline the rules and regulations for the use of our website and services.</p>
+            
+            <h3>1. Acceptance of Terms</h3>
+            <p>By accessing this website and using our services, you accept and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you may not use our website or services.</p>
+            
+            <h3>2. Products and Services</h3>
+            <p>We specialize in dental instruments, equipment, and consumables for both wholesale and retail customers. Product descriptions, images, and prices are subject to change without notice. We reserve the right to modify or discontinue any product without notice at any time.</p>
+            
+            <h3>3. Orders and Payment</h3>
+            <p>All orders are subject to acceptance and availability. We reserve the right to refuse any order placed with us. Payment terms may vary based on customer credit history and order size. Prices are subject to change without notice.</p>
+            
+            <h3>4. Shipping and Delivery</h3>
+            <p>Shipping costs and delivery times vary depending on the destination and shipping method selected. We are not responsible for delays caused by carriers or circumstances beyond our control.</p>
+            
+            <h3>5. Returns and Refunds</h3>
+            <p>Returns are accepted within 7 days of delivery for defective or damaged products. Products must be in original packaging and unused. Customers are responsible for return shipping costs unless the return is due to our error.</p>
+            
+            <h3>6. Intellectual Property</h3>
+            <p>All content on this website, including text, graphics, logos, images, and software, is the property of SHANTI DENTAL RAVI & CO and is protected by copyright and other intellectual property laws.</p>
+            
+            <h3>7. Limitation of Liability</h3>
+            <p>SHANTI DENTAL RAVI & CO shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use our products or services.</p>
+            
+            <h3>8. Governing Law</h3>
+            <p>These Terms and Conditions are governed by and construed in accordance with the laws of India, and you submit to the exclusive jurisdiction of the courts in Hyderabad, Telangana.</p>
+            
+            <p><strong>Last Updated:</strong> June 15, 2023</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>SHANTI DENTAL RAVI & CO</h3>
+                    <p>Your trusted partner for dental supplies and equipment. Serving dental professionals across Hyderabad and Telangana since 1995.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="tel:9246377427" style="color: #ddd; text-decoration: none; display: block; margin-bottom: 5px;">
+                            <i class="fas fa-phone-alt" style="margin-right: 10px;"></i>9246377427
+                        </a>
+                        <a href="tel:8121102406" style="color: #ddd; text-decoration: none; display: block; margin-bottom: 5px;">
+                            <i class="fas fa-phone-alt" style="margin-right: 10px;"></i>8121102406
+                        </a>
+                        <a href="mailto:shantidentalravi@gmail.com" style="color: #ddd; text-decoration: none;">
+                            <i class="fas fa-envelope" style="margin-right: 10px;"></i>shantidentalravi@gmail.com
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Visit Us</h3>
+                    <p>Ground Floor, Shop No. G-26, 5-9-1121, Agarwal Chambers, Abids, Sher Gate, King Koti, Hyderabad, Telangana 500001</p>
+                    <div style="margin-top: 15px;">
+                        <p><strong>Business Hours:</strong></p>
+                        <p>Mon-Sat: 9:30 AM - 8:30 PM</p>
+                        <p>Sun: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> SHANTI DENTAL RAVI & CO. All Rights Reserved.</p>
+                <p>Dental Wholesellers and Retailers, Hyderabad, Telangana</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+            this.querySelector('i').classList.toggle('fa-bars');
+            this.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileNav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileNav').classList.remove('active');
+                document.getElementById('mobileMenuBtn').querySelector('i').classList.add('fa-bars');
+                document.getElementById('mobileMenuBtn').querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Set current year in copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Handle navigation between pages
+        document.querySelectorAll('nav a, #mobileNav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                
+                // Hide all page content sections
+                document.querySelectorAll('.page-content, #home-content').forEach(section => {
+                    section.style.display = 'none';
+                });
+                
+                // Show the selected section
+                if (targetId === 'home') {
+                    document.getElementById('home-content').style.display = 'block';
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else if (targetId === 'about' || targetId === 'products' || targetId === 'contact') {
+                    document.getElementById('home-content').style.display = 'block';
+                    const element = document.getElementById(targetId);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                } else {
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.style.display = 'block';
+                        window.scrollTo({ top: targetSection.offsetTop - 100, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+        
+        // Handle contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you for your message, ${name}! We will contact you at ${phone} shortly.`);
+            
+            // Reset the form
+            this.reset();
+        });
+        
+        // Show home content by default
+        document.getElementById('home-content').style.display = 'block';
+    </script>
+</body>
+</html>
